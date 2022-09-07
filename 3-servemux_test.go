@@ -16,6 +16,14 @@ func TestServeMux(t *testing.T) {
 		fmt.Fprint(w, "About Page of Rasyidev website")
 	})
 
+	mux.HandleFunc("/images/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprint(w, "All images")
+	})
+
+	mux.HandleFunc("/images/thumbnails/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprint(w, "All thumbnails")
+	})
+
 	server := http.Server{
 		Addr:    "localhost:9090",
 		Handler: mux,
@@ -26,3 +34,10 @@ func TestServeMux(t *testing.T) {
 		panic(err.Error())
 	}
 }
+
+/*
+Coba endpoint:
+localhost:9090/images
+localhost:9090/images/apple
+localhost:9090/images/thumbnails/apple
+*/
