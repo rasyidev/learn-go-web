@@ -23,3 +23,10 @@
 - Mendukung banyak endpoint
 - Di bahasa pemrograman lain istilahnya adalah **router**
 
+## URL Pattern pada `ServeMux`
+- `/` di akhir pattern = re"/.+"
+- Cth: `/images/` dapat menerima endpoint berikut
+  - `/images/house`
+  - `/images/appartment`
+  - `/images/lampung/pringsewu`
+  - dll
