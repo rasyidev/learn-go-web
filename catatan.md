@@ -8,3 +8,18 @@
 
 ## Server `net/http`
 - Struct yang ada di package `net/http`
+
+## Interface `Handler`
+- Digunakan untuk menerima HTTP Request yang masuk ke server
+- Direpresentasikan dalam interface, di dalamnya terdapat function `ServeHTTP()`
+
+## `HandlerFunc`
+- Implementasi dari `Handler`
+- Membuat function handler HTTP
+- Hanya support 1 endpoint saja
+
+## `ServeMux`
+- Implementasi dari `Handler`
+- Mendukung banyak endpoint
+- Di bahasa pemrograman lain istilahnya adalah **router**
+
