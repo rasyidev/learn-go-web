@@ -35,3 +35,21 @@
 - Struct yang merepresentasikan HTTP Request yang dikirim oleh Client (Web browser, Postman, dll)
 - Semua informasi request dapat diambil:
   - Cth: URL, http method, http header, http body, dll.
+
+
+## HTTP Test
+- Unit test untuk handler tanpa harus menjalankan aplikasi webnya
+- Dengan menggunakan HTTP Test, developer dapat fokus pada handler function yang ingin ditest
+- More: https://golang.org/pkg/net/http/httptest/
+
+**Implementasi**
+- `httptest.NewRequest(method, url, body)`, untuk simulasi request
+- Dapat menggunakan function di atas untuk simulasi pada unit test
+- Dapat menambahkan informasi tambahan lainnya pada request
+  - Header
+  - Cookie
+  - dll.
+
+- `httptest.NewRecorder()`, untuk membuat `ResponseRecorder`
+- `ResponseRecorder` adalah struct bantuan untuk merekam HTTP Response dari hasil testing
+
