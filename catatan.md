@@ -30,3 +30,8 @@
   - `/images/appartment`
   - `/images/lampung/pringsewu`
   - dll
+
+## Request
+- Struct yang merepresentasikan HTTP Request yang dikirim oleh Client (Web browser, Postman, dll)
+- Semua informasi request dapat diambil:
+  - Cth: URL, http method, http header, http body, dll.
