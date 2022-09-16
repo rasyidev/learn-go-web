@@ -10,10 +10,15 @@ import (
 
 func SearchHandler(w http.ResponseWriter, r *http.Request) {
 	queries := r.URL.Query()
-	name := queries.Get("name")
+	name := queries["name"]
 	married := queries.Get("married")
 
-	if married != "" && name != "" {
+	if len(name) > 1 {
+		fmt.Println("Multiple Value")
+		fmt.Println(len(name))
+	}
+
+	if married != "" && len(name) == 1 {
 		m, err := strconv.ParseBool(married)
 		if err != nil {
 			panic(err)
@@ -28,12 +33,24 @@ func SearchHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 }
+
 func TestSearchHandler(t *testing.T) {
 	request := httptest.NewRequest(http.MethodGet, "/search?name=rasyidev&married=true", nil)
 	response := httptest.NewRecorder()
 
 	SearchHandler(response, request)
 
+	fmt.Println(response.Body)
+
+}
+
+func TestSearchHandlerMultipleValues(t *testing.T) {
+	request := httptest.NewRequest(http.MethodGet, "/search?name=rasyidev&name=pro&married=true", nil)
+	response := httptest.NewRecorder()
+
+	SearchHandler(response, request)
+
+	fmt.Println("Response Body")
 	fmt.Println(response.Body)
 
 }
