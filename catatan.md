@@ -53,3 +53,6 @@
 - `httptest.NewRecorder()`, untuk membuat `ResponseRecorder`
 - `ResponseRecorder` adalah struct bantuan untuk merekam HTTP Response dari hasil testing
 
+## Query Parameter
+- Mengirim data yang ada di url dari client (browser, postman, dll) ke server 
+- Cth: localhost:9090/say-hello?name=rasyidev
