@@ -81,3 +81,16 @@
 ## Response Code
 - Dikirim oleh server, default: 200 (ok)
 - Semua status code sudah disiapkan Go Lang : https://github.com/golang/go/blob/master/src/net/http/status.go
+
+## Cookie
+- Fitur HTTP yang memungkinkan server memberi response cookie (key-value) dan client menyimpan cookie tersebut sebagai tiket untuk request selanjutnya.
+- HTTP menggunakan konsep stateless antara client dan server. Server tidak akan menyimpan data apapun untuk mengingat setiap request dari client, agar lebih mudah melakukan scaling.
+- Untuk mengingat data dari client tertentu, contohnya pada saat login pada website, server harus ingat bahwa client tersebut sudah login sehingga tidak perlu diminta untuk login lagi.
+- Cookie dapat dimanfaatkan untuk mengingat data dari client tertentu
+**Membuat Cookie**
+```go
+cookie := new(http.Cookie)
+cookie.Name = "namanya"
+cookie.Value = "nilainya"
+cookie.Path = "/" // pathnya
+``
