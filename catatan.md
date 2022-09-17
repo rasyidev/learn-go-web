@@ -77,3 +77,7 @@
 **Menangkap Form Post**
 - Parse dari form menggunakan `request.ParseForm()`
 - Menangkap value dari form post menggunakan `request.PostForm()` atau `request.Form.Get("key")`
+
+## Response Code
+- Dikirim oleh server, default: 200 (ok)
+- Semua status code sudah disiapkan Go Lang : https://github.com/golang/go/blob/master/src/net/http/status.go
