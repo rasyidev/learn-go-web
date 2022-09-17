@@ -69,7 +69,52 @@ Test di Browser sambil pantau Storage>Cookies (CTRL+SHIFT+I):
 localhost:9090/set-cookie?name=RasyidevPro
 localhost:9090/get-cookie
 localhost:9090/delete-cookie
+*/
 
+/*
+--GENERAL--
+Request URL: http://localhost:9090/set-cookie
+Request Method: GET
+Status Code: 200 OK
+Remote Address: 127.0.0.1:9090
+Referrer Policy: strict-origin-when-cross-origin
+
+--RESPONSE HEADER--
+Content-Length: 27
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 17 Sep 2022 16:17:39 GMT
+Set-Cookie: X-RASYIDEV-Name=; Path=/
+*/
+
+/*
+--GENERAL--
+Request URL: http://localhost:9090/get-cookie?name=RasyidevPro
+Request Method: GET
+Status Code: 200 OK
+Remote Address: 127.0.0.1:9090
+Referrer Policy: strict-origin-when-cross-origin
+
+--REQUEST HEADER--
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*\/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Connection: keep-alive
+Cookie: X-RASYIDEV-Name=RasyidevPro
+Host: localhost:9090
+*/
+
+/*
+--GENERAL--
+Request URL: http://localhost:9090/delete-cookie
+Request Method: GET
+Status Code: 200 OK
+Remote Address: 127.0.0.1:9090
+Referrer Policy: strict-origin-when-cross-origin
+
+--RESPONSE HEADER--
+Content-Length: 0
+Date: Sat, 17 Sep 2022 16:22:12 GMT
+Set-Cookie: X-RASYIDEV-Name=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT
 */
 
 func TestSetCookie(t *testing.T) {
