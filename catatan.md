@@ -72,6 +72,7 @@
 **Mengirim Form Post**
 - Untuk mengirim body form menggunakan bantuan `strings.NewReader` lalu dikirimkan menggunakan:
 - `request.httptest.NewRequest(http.MethodPost, "/", strings.NewReader)`
+- Wajib menambahkan Header `"Content-Type"` denvan value `"application/x-www-form-urlencoded"`
 
 **Menangkap Form Post**
 - Parse dari form menggunakan `request.ParseForm()`
