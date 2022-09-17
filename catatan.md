@@ -67,3 +67,12 @@
 - `Request.Header`
 - Nilainya berupa `map[string]string`
 - _case insensitive_
+
+## Form Post
+**Mengirim Form Post**
+- Untuk mengirim body form menggunakan bantuan `strings.NewReader` lalu dikirimkan menggunakan:
+- `request.httptest.NewRequest(http.MethodPost, "/", strings.NewReader)`
+
+**Menangkap Form Post**
+- Parse dari form menggunakan `request.ParseForm()`
+- Menangkap value dari form post menggunakan `request.PostForm()` atau `request.Form.Get("key")`
