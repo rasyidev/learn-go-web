@@ -93,4 +93,5 @@ cookie := new(http.Cookie)
 cookie.Name = "namanya"
 cookie.Value = "nilainya"
 cookie.Path = "/" // pathnya
-``
+```
+
