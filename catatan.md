@@ -56,3 +56,14 @@
 ## Query Parameter
 - Mengirim data yang ada di url dari client (browser, postman, dll) ke server 
 - Cth: localhost:9090/say-hello?name=rasyidev
+
+## Header
+- Informasi tambahan yg biasa dikirim dari client ke server atau sebaliknya.
+- Biasanya ada pada HTTP Request dan HTTP response
+- Saat menggunakan browser, otomatis header akan ditambahkan oleh browser tersebut seperti informasi browser, dll.
+
+## Request Header
+- Untuk menangkap request header yang dikirim oleh client
+- `Request.Header`
+- Nilainya berupa `map[string]string`
+- _case insensitive_
