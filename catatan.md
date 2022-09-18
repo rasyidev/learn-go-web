@@ -101,3 +101,12 @@ cookie.Path = "/" // pathnya
 
 ## Menggunakan Static File tertentu
 - `http.ServeFile()`
+
+
+## HTML Template
+- Untuk membuat halaman HTML yang dinamis
+- Sebelum menggunakan HTML Template, harus membuat template terlebih dahulu
+- Template dapat berupa string atau file
+- `{{.}}` untuk membuat bagian html yang dinamis
+- Template -> Parse -> Execute
+
