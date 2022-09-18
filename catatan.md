@@ -95,3 +95,6 @@ cookie.Value = "nilainya"
 cookie.Path = "/" // pathnya
 ```
 
+## File Server
+- Menggunakan `http.Dir`, saat compile aplikasi, directory harus tetap diupload juga ke dalam server. Hal ini karena static file tidak ikut dicompile
+- Menggunakan Go Embed `embed.FS`, saat compile aplikasi, directory tidak perlu diupload juga ke dalam server. Hal ini karena static file sudah ikut dicompile dalam binary aplikasinya.
