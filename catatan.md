@@ -113,3 +113,8 @@ cookie.Path = "/" // pathnya
 ## HTML Template Directory
 - Untuk load banyak file html sekaligus
 - `template.Glob()`
+
+## Template Data
+- Memasukkan multiple value ke dalam html
+- Menggunakan `struct` atau `map`
+- `{{.NamaField}}`
