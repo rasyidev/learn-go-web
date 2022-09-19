@@ -110,3 +110,6 @@ cookie.Path = "/" // pathnya
 - `{{.}}` untuk membuat bagian html yang dinamis
 - Template -> Parse -> Execute
 
+## HTML Template Directory
+- Untuk load banyak file html sekaligus
+- `template.Glob()`
