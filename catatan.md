@@ -118,3 +118,10 @@ cookie.Path = "/" // pathnya
 - Memasukkan multiple value ke dalam html
 - Menggunakan `struct` atau `map`
 - `{{.NamaField}}`
+
+## Template Action
+- if-else, loop, dll.
+**If-Else**
+- `{{if.Value}}` ... `{{end}}`, Jika value tidak kosong block akan dieksekusi
+- `{{if.Value}}` ... `{{else if.Value}}` ... `{{end}}`
+- `{{if.Value}}` ... `{{else}}` ... `{{end}}`
