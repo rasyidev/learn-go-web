@@ -125,3 +125,11 @@ cookie.Path = "/" // pathnya
 - `{{if.Value}}` ... `{{end}}`, Jika value tidak kosong block akan dieksekusi
 - `{{if.Value}}` ... `{{else if.Value}}` ... `{{end}}`
 - `{{if.Value}}` ... `{{else}}` ... `{{end}}`
+
+**Operator Perbandingan**
+- `eq`, equal
+- `ne`, not equal
+- `lt`, less than
+- `le`, less than equal
+- `gt`, greater than
+- `ge`, greater than equal
