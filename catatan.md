@@ -133,3 +133,8 @@ cookie.Path = "/" // pathnya
 - `le`, less than equal
 - `gt`, greater than
 - `ge`, greater than equal
+
+**Range**
+- Perulangan
+- `{{range $index, $element := .Value}}`
+- Bisa menggunakan else jika `.Value` kosong
