@@ -149,3 +149,8 @@ cookie.Path = "/" // pathnya
 - Mengakses function / method dalam struct. Struct ini dikirim ke html template
 - `{{.NamaFunction}}`, memanggil function tanpa parameter
 - `{{.NamaFunction "arg1", "arg2"}}`, memanggil function dengan parameter
+
+## Template Caching
+- Melakukan parsing template berulang - ulang sebenarnya tidak efisien karena setiap handler dipanggil maka akan selalu melakukan parsing ulang.
+- **Idealnya** template hanya melakukan parsing satu kali di awal ketika aplikasi berjalan
+- Selanjutnya template akan di-_caching_ (disimpan di dalam memory), sehingga tidak perlu melakukan parsing lagi. Hal ini membuat web kita semakin cepat di-_load_
