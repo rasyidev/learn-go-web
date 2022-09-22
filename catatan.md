@@ -145,3 +145,7 @@ cookie.Path = "/" // pathnya
 - Default: nama file menjadi nama template
 - `{{define "nama template"}}`, untuk mengubah nama template
 
+## Template Function
+- Mengakses function / method dalam struct. Struct ini dikirim ke html template
+- `{{.NamaFunction}}`, memanggil function tanpa parameter
+- `{{.NamaFunction "arg1", "arg2"}}`, memanggil function dengan parameter
