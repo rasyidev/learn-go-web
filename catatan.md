@@ -138,3 +138,10 @@ cookie.Path = "/" // pathnya
 - Perulangan
 - `{{range $index, $element := .Value}}`
 - Bisa menggunakan else jika `.Value` kosong
+
+## Template Layout
+- Digunakan untuk membuat template html dinamis
+- Cocok untuk halaman yang memiliki tampilan yang digunakan oleh banyak halaman seperti header, footer, dll.
+- Default: nama file menjadi nama template
+- `{{define "nama template"}}`, untuk mengubah nama template
+
