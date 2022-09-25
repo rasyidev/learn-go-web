@@ -154,3 +154,14 @@ cookie.Path = "/" // pathnya
 - Melakukan parsing template berulang - ulang sebenarnya tidak efisien karena setiap handler dipanggil maka akan selalu melakukan parsing ulang.
 - **Idealnya** template hanya melakukan parsing satu kali di awal ketika aplikasi berjalan
 - Selanjutnya template akan di-_caching_ (disimpan di dalam memory), sehingga tidak perlu melakukan parsing lagi. Hal ini membuat web kita semakin cepat di-_load_
+
+## Cross Site Scripting (XSS)
+- Issue security atau celah keamanan ketika membuat aplikasi berbasis web
+- User sengaja memasukkan parameter tertentu pada url yang mengandung JavaScript agar dirender oleh aplikasi web target
+- Biasanya digunakan untuk mencuri cookie browser untuk mengambil alih akun kita yang tersimpan di dalam browser
+
+
+**Dapat Diatasi dengan Template Auto Escape Go-Lang**
+- Dapat mengabaikan (escape) secara otomatis apabila terdapat input berupa tag html atau JavaScript
+- More : https://github.com/golang/go/blob/master/src/html/template/escape.go
+- Secara default belum aman karena sudah di-escape (go 1.19)
