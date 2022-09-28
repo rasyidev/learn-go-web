@@ -1,8 +1,13 @@
 package learngoweb
 
 import (
+	"bytes"
+	_ "embed"
+	"fmt"
 	"io"
+	"mime/multipart"
 	"net/http"
+	"net/http/httptest"
 	"os"
 	"testing"
 )
@@ -53,4 +58,31 @@ func TestUploadForm(t *testing.T) {
 	if err != nil {
 		panic(err.Error())
 	}
+}
+
+//go:embed resources/rasyidev.png
+var uploadFileTest []byte
+
+func TestUploadFile(t *testing.T) {
+	body := new(bytes.Buffer)
+
+	// writer multipart
+	writer := multipart.NewWriter(body)
+	// field name
+	writer.WriteField("name", "Rasyidev Pro")
+	// field file
+	file, _ := writer.CreateFormFile("file", "rasyidev-pro.png")
+	// write dari file menggunakan embed
+	file.Write(uploadFileTest)
+	// tutup writer filenya
+	writer.Close()
+
+	request := httptest.NewRequest(http.MethodPost, "localhost:9090/upload", body)
+	request.Header.Set("Content-Type", writer.FormDataContentType())
+	recorder := httptest.NewRecorder()
+
+	UploadHandler(recorder, request)
+
+	responseBody, _ := io.ReadAll(recorder.Result().Body)
+	fmt.Println(string(responseBody))
 }
