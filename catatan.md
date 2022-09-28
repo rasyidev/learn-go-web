@@ -171,3 +171,7 @@ cookie.Path = "/" // pathnya
 - Pada HTTP, hanya perlu membuat response code 3xx dan menambah header location
 - Di go lang ada function tertentu untuk memudahkan redirect
 - `http.Redirect(writer, request, url, code)`
+
+## Upload File: Multipart
+- Parsing Multipart menggunakan `Request.ParseMultipartForm(size)` 
+- Tanpa parsing, bisa menggunakan `Request.FormFile(name)`
