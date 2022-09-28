@@ -165,3 +165,9 @@ cookie.Path = "/" // pathnya
 - Dapat mengabaikan (escape) secara otomatis apabila terdapat input berupa tag html atau JavaScript
 - More : https://github.com/golang/go/blob/master/src/html/template/escape.go
 - Secara default belum aman karena sudah di-escape (go 1.19)
+
+## Redirect
+- Memindahkan path saat ini ke path tujuan
+- Pada HTTP, hanya perlu membuat response code 3xx dan menambah header location
+- Di go lang ada function tertentu untuk memudahkan redirect
+- `http.Redirect(writer, request, url, code)`
