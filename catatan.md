@@ -175,3 +175,8 @@ cookie.Path = "/" // pathnya
 ## Upload File: Multipart
 - Parsing Multipart menggunakan `Request.ParseMultipartForm(size)` 
 - Tanpa parsing, bisa menggunakan `Request.FormFile(name)`
+
+## Download File
+- Pada standar HTTP, saat download file terdapat header response `Content-Disposition`
+  - `inline` **default**, hanya menampilkan di browser
+  - `attachment`, memaksa browser untuk mendownload file
