@@ -180,3 +180,13 @@ cookie.Path = "/" // pathnya
 - Pada standar HTTP, saat download file terdapat header response `Content-Disposition`
   - `inline` **default**, hanya menampilkan di browser
   - `attachment`, memaksa browser untuk mendownload file
+
+## Middleware, Filter, atau Interceptor
+- Fitur yang memungkinkan kita untuk menambahkan block program sebelum dan setelah sebuah handler dieksekusi
+- request -> middleware -> handler -> middleware -> response
+- Sayangnya di Go Lang tidak ada middleware, kita harus membuat sendiri middlewarenya
+- Kita dapat membuat middleware sendiri menggunakan handler
+
+### Middleware Error Handler
+- Dapat melakukan recover jika ada error dan mengubah panic menjadi error response dari server
+- Dengan menerapkan ini, aplikasi tidak akan berhenti berjalan meskipun ada error. Pesan error akan ada di log
